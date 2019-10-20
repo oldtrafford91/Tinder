@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E114812423CDBE9100457392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114812323CDBE9100457392 /* ViewController.swift */; };
+		E114812723CDC70300457392 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114812623CDC70300457392 /* UIView+Extensions.swift */; };
 		E1B9632923CA13CF00BF73EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9632823CA13CF00BF73EA /* AppDelegate.swift */; };
 		E1B9632B23CA13CF00BF73EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9632A23CA13CF00BF73EA /* SceneDelegate.swift */; };
 		E1B9633223CA13D900BF73EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B9633123CA13D900BF73EA /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E114812323CDBE9100457392 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E114812623CDC70300457392 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E1B9632523CA13CF00BF73EA /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B9632823CA13CF00BF73EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B9632A23CA13CF00BF73EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E114812523CDC6D700457392 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E114812623CDC70300457392 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E1B9631C23CA13CF00BF73EA = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +64,7 @@
 		E1B9632723CA13CF00BF73EA /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				E114812523CDC6D700457392 /* Extensions */,
 				E1B9633D23CA142A00BF73EA /* App */,
 				E1B9633C23CA140E00BF73EA /* Features */,
 				E1B9633E23CA145000BF73EA /* Resources */,
@@ -62,6 +75,7 @@
 		E1B9633C23CA140E00BF73EA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E114812323CDBE9100457392 /* ViewController.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -155,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E114812423CDBE9100457392 /* ViewController.swift in Sources */,
+				E114812723CDC70300457392 /* UIView+Extensions.swift in Sources */,
 				E1B9632923CA13CF00BF73EA /* AppDelegate.swift in Sources */,
 				E1B9632B23CA13CF00BF73EA /* SceneDelegate.swift in Sources */,
 			);
