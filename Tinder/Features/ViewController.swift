@@ -23,16 +23,9 @@ class ViewController: UIViewController {
     let middleView = UIView()
     middleView.backgroundColor = .red
     
-    let bottomButtons = [UIColor.red, .black, .gray, .yellow].map {
-      UIButton(backgroundColor: $0)
-    }
-    let bottomStackView = UIStackView(arrangedSubviews: bottomButtons)
-    bottomStackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-    bottomStackView.axis = .horizontal
-    bottomStackView.alignment = .center
-    bottomStackView.distribution = .fillEqually
-
     
+    let bottomStackView = HomeBottomControlsStackView()
+
     let containerStackView = UIStackView(arrangedSubviews: [topStackView, middleView,bottomStackView])
     containerStackView.axis = .vertical
     view.addSubview(containerStackView)
