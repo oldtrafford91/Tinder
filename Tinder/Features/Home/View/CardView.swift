@@ -1,6 +1,6 @@
 import UIKit
 
-private enum CardDismissDirection: CGFloat {
+private enum CardViewDismissDirection: CGFloat {
   case right = 1
   case left = -1
 }
@@ -11,6 +11,7 @@ class CardView: UIView {
   
   // MARK: - Subviews
   let imageView = UIImageView(image: #imageLiteral(resourceName: "kelly3"))
+  let informationLabel = UILabel()
   
   // MARK: - Initializer
   override init(frame: CGRect) {
@@ -31,8 +32,16 @@ class CardView: UIView {
     addSubview(imageView)
     imageView.fillSuperview()
     
+    addSubview(informationLabel)
+    informationLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets.zero)
+    
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
     addGestureRecognizer(panGesture)
+  }
+  
+  func bind(with viewModel: CardViewViewModel) {
+    imageView.image = viewModel.image
+    informationLabel.attributedText = viewModel.information
   }
   
   // MARK: - Action
@@ -57,7 +66,7 @@ class CardView: UIView {
   }
   
   private func handleEndedGesture(_ gesture: UIPanGestureRecognizer) {
-    let translationDirection: CardDismissDirection = gesture.translation(in: self).x > 0 ? .right : .left
+    let translationDirection: CardViewDismissDirection = gesture.translation(in: self).x > 0 ? .right : .left
     let shouldDismissCard = abs(gesture.translation(in: self).x) > threshold
 
     UIView

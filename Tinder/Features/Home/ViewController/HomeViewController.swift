@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
   
   // MARK: - Subviews
   let topStackView = TopNavigationStackView()
@@ -32,6 +32,7 @@ class ViewController: UIViewController {
   
   private func configureDeckView() {
     let cardView = CardView()
+    cardView.bind(with: CardViewViewModel(user: User(name: "Kelly", age: 16, profession: "DJ", imageName: "kelly1")))
     deckView.addSubview(cardView)
     cardView.fillSuperview()
   }
