@@ -1,25 +1,30 @@
 import UIKit
 
-class CardViewViewModel {
+struct CardViewViewModel {
+  
+  // MARK: Properties
   private let model: CardModelType
   
-  init(model: CardModelType) {
-    self.model = model
-  }
-  
   var image: UIImage? {
-    return UIImage(named: model.imageName)
+    if let user = model as? User {
+      return UIImage(named: user.userImage)
+    } else if let advertiser = model as? Adveriser {
+      return UIImage(named: advertiser.brandImage)
+    }
+    return nil
   }
   
   var information: NSAttributedString {
     let information = NSMutableAttributedString()
-    let name = NSAttributedString(string: model.name, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
-    information.append(name)
+    
     if let user = model as? User {
+      let name = NSAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
+      information.append(name)
       information.append(NSAttributedString(string: "  \(user.age)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular) ]))
       information.append(NSAttributedString(string: "\n \(user.profession)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular) ]))
-    } else {
-      
+    } else if let brand = model as? Adveriser{
+      let brandName = NSAttributedString(string: brand.brandName, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
+      information.append(brandName)
     }
     return information
   }
@@ -30,6 +35,11 @@ class CardViewViewModel {
     } else {
       return .center
     }
+  }
+  
+  // MARK: Initializer
+  init(model: CardModelType) {
+    self.model = model
   }
 
 }

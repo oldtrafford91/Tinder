@@ -7,6 +7,12 @@ class HomeViewController: UIViewController {
   let deckView = UIView()
   let bottomStackView = HomeBottomControlsStackView()
   
+  // MARK: Properties
+  let deckModel: [CardModelType] = [
+    User(name: "Kelly", age: 18, profession: "DJ", userImage: "kelly1"),
+    Adveriser(brandImage: "kelly1", brandName: "Microsoft", description: "Biggest IT company in the world. Only behind Apple")
+  ]
+  
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,9 +37,13 @@ class HomeViewController: UIViewController {
   }
   
   private func configureDeckView() {
-    let cardView = CardView()
-    cardView.bind(with: CardViewViewModel(user: User(name: "Kelly", age: 16, profession: "DJ", imageName: "kelly1")))
-    deckView.addSubview(cardView)
-    cardView.fillSuperview()
+    for model in deckModel {
+      let cardView = CardView()
+      cardView.bind(with: CardViewViewModel(model: model))
+      deckView.addSubview(cardView)
+      cardView.fillSuperview()
+    }
+    
+
   }
 }

@@ -10,8 +10,8 @@ class CardView: UIView {
   private let threshold: CGFloat = 100
   
   // MARK: - Subviews
-  let imageView = UIImageView(image: #imageLiteral(resourceName: "kelly3"))
-  let informationLabel = UILabel()
+  private let imageView = UIImageView(image: #imageLiteral(resourceName: "kelly3"))
+  private let informationLabel = UILabel()
   
   // MARK: - Initializer
   override init(frame: CGRect) {
@@ -32,8 +32,10 @@ class CardView: UIView {
     addSubview(imageView)
     imageView.fillSuperview()
     
+    informationLabel.textColor = .white
+    informationLabel.numberOfLines = 0
     addSubview(informationLabel)
-    informationLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets.zero)
+    informationLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 0, left: 16, bottom: 10, right: 16))
     
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
     addGestureRecognizer(panGesture)
@@ -42,6 +44,7 @@ class CardView: UIView {
   func bind(with viewModel: CardViewViewModel) {
     imageView.image = viewModel.image
     informationLabel.attributedText = viewModel.information
+    informationLabel.textAlignment = viewModel.textAlignment
   }
   
   // MARK: - Action
