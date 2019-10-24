@@ -12,6 +12,7 @@ class CardView: UIView {
   // MARK: - Subviews
   private let imageView = UIImageView(image: #imageLiteral(resourceName: "kelly3"))
   private let informationLabel = UILabel()
+  private let gradientLayer = CAGradientLayer()
   
   // MARK: - Initializer
   override init(frame: CGRect) {
@@ -23,20 +24,43 @@ class CardView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  // MARK: - View Life Cycle
+  override func layoutSubviews() {
+    gradientLayer.frame = self.frame
+  }
+  
   // MARK: - Setup
   private func configure() {
     layer.cornerRadius = 12
     clipsToBounds = true
     translatesAutoresizingMaskIntoConstraints = false
     
+    configureImageView()
+    configureGradientLayer()
+    configureInformationLabel()
+    createPangesture()
+  }
+  
+  private func configureImageView() {
     addSubview(imageView)
     imageView.fillSuperview()
-    
+  }
+  
+  private func configureInformationLabel() {
     informationLabel.textColor = .white
     informationLabel.numberOfLines = 0
     addSubview(informationLabel)
     informationLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 0, left: 16, bottom: 10, right: 16))
-    
+  }
+
+  
+  private func configureGradientLayer() {
+    gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+    gradientLayer.locations = [0.5, 1.1]
+    layer.addSublayer(gradientLayer)
+  }
+  
+  private func createPangesture() {
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
     addGestureRecognizer(panGesture)
   }
