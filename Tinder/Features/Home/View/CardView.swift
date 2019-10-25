@@ -74,6 +74,8 @@ class CardView: UIView {
   // MARK: - Action
   @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
     switch gesture.state {
+    case .began:
+      removeAllAnimation()
     case .changed:
       handleChanged(gesture)
     case .ended:
@@ -112,6 +114,12 @@ class CardView: UIView {
       }, completion: { _ in
         self.transform = .identity
       })
+  }
+  
+  private func removeAllAnimation() {
+    superview?.subviews.forEach({ view in
+      view.layer.removeAllAnimations()
+    })
   }
   
   // MARK: - Helpers
