@@ -9,8 +9,9 @@ class HomeViewController: UIViewController {
   
   // MARK: Properties
   let deckModel: [CardModelType] = [
-    User(name: "Kelly", age: 18, profession: "DJ", userImage: "kelly1"),
-    Adveriser(brandImage: "kelly1", brandName: "Microsoft", description: "Biggest IT company in the world. Only behind Apple")
+    User(name: "Kelly", age: 18, profession: "DJ", userImages: ["kelly1", "kelly2", "kelly3"]),
+    User(name: "Jane", age: 18, profession: "Teacher", userImages: ["jane1", "jane2", "jane3"]),
+    Adveriser(title: "We build Windows and Azure", brandName: "Microsoft", brandImages: ["slide_out_menu_poster"])
   ]
   
   // MARK: - View Life Cycle
@@ -43,7 +44,5 @@ class HomeViewController: UIViewController {
       deckView.addSubview(cardView)
       cardView.fillSuperview()
     }
-    
-
   }
 }

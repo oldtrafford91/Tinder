@@ -1,9 +1,9 @@
 import Foundation
 
 struct Adveriser: CardModelType {
-  let brandImage: String
+  let title: String
   let brandName: String
-  let description: String
+  let brandImages: [String]
 }
 
 

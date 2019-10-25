@@ -65,8 +65,9 @@ class CardView: UIView {
     addGestureRecognizer(panGesture)
   }
   
+  // MARK: Binding
   func bind(with viewModel: CardViewViewModel) {
-    imageView.image = viewModel.image
+    imageView.image = viewModel.images[0]
     informationLabel.attributedText = viewModel.information
     informationLabel.textAlignment = viewModel.textAlignment
   }
@@ -112,7 +113,7 @@ class CardView: UIView {
                     }
 
       }, completion: { _ in
-        self.transform = .identity
+//        self.transform = .identity
       })
   }
   
