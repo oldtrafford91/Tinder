@@ -12,7 +12,7 @@ class HomeBottomControlsStackView: UIStackView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  // MARK: Setup
+  // MARK: - Setup
   private func configure() {
     let subViews = [ #imageLiteral(resourceName: "refresh_circle"), #imageLiteral(resourceName: "dismiss_circle"), #imageLiteral(resourceName: "super_like_circle"), #imageLiteral(resourceName: "like_circle"), #imageLiteral(resourceName: "boost_circle")].map {
       UIButton.systemButton(with: $0.withRenderingMode(.alwaysOriginal),

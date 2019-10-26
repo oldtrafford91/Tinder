@@ -39,8 +39,7 @@ class HomeViewController: UIViewController {
   
   private func configureDeckView() {
     for model in deckModel {
-      let cardView = CardView()
-      cardView.bind(with: CardViewViewModel(model: model))
+      let cardView = CardView(viewModel: CardViewViewModel(model: model))
       deckView.addSubview(cardView)
       cardView.fillSuperview()
     }
