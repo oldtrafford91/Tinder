@@ -7,9 +7,9 @@ private enum CardViewDismissDirection: CGFloat {
 
 class CardView: UIView {
   // MARK: Constant
-  private let threshold: CGFloat = 100
-  private let barSelectedColor: UIColor = .white
-  private let barDeselectedColor: UIColor = .init(white: 0, alpha: 0.1)
+  private static let threshold: CGFloat = 100
+  private static let barSelectedColor: UIColor = .white
+  private static let barDeselectedColor: UIColor = .init(white: 0, alpha: 0.1)
   
   // MARK: - Subviews
   private let imageView = UIImageView(image: #imageLiteral(resourceName: "kelly3"))
@@ -19,7 +19,7 @@ class CardView: UIView {
   
   // MARK: - Properties
   private var viewModel: CardViewViewModel!
-  private var currentImageIndex: Int = 0
+
   
   // MARK: - Initializer
   private override init(frame: CGRect) {
@@ -58,6 +58,7 @@ class CardView: UIView {
   }
   
   private func setupImageView() {
+    imageView.contentMode = .scaleAspectFill
     addSubview(imageView)
     imageView.fillSuperview()
   }
@@ -83,6 +84,7 @@ class CardView: UIView {
     addSubview(barStackView)
     barStackView.translatesAutoresizingMaskIntoConstraints = false
     barStackView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 8, left: 8, bottom: 0, right: 8), size: .init(width: 0, height: 4))
+    
   }
   
   private func setupPangesture() {
@@ -97,19 +99,27 @@ class CardView: UIView {
   
   func setup(with viewModel: CardViewViewModel) {
     self.viewModel = viewModel
-    
-    imageView.image = viewModel.images[currentImageIndex]
+
+    imageView.image = viewModel.images.first
     informationLabel.attributedText = viewModel.information
     informationLabel.textAlignment = viewModel.textAlignment
     
     (0...viewModel.images.count-1).forEach { _ in
       let barView = UIView()
-      barView.backgroundColor = barDeselectedColor
+      barView.backgroundColor = CardView.barDeselectedColor
       barStackView.addArrangedSubview(barView)
     }
-    barStackView.arrangedSubviews.first?.backgroundColor = barSelectedColor
+    barStackView.subviews.first?.backgroundColor = CardView.barSelectedColor
+    
+    viewModel.imageIndexObserver = { [weak self] (arg) in
+      let (index, image) = arg
+      guard let self = self else { return }
+      self.imageView.image = image
+      self.barStackView.arrangedSubviews.forEach { $0.backgroundColor = CardView.barDeselectedColor }
+      self.barStackView.arrangedSubviews[index].backgroundColor = CardView.barSelectedColor
+    }
   }
-  
+
   // MARK: - Action
   @objc private func handlePan(_ gesture: UIPanGestureRecognizer) {
     switch gesture.state {
@@ -135,7 +145,7 @@ class CardView: UIView {
   
   private func handlePanEnded(_ gesture: UIPanGestureRecognizer) {
     let translationDirection: CardViewDismissDirection = gesture.translation(in: self).x > 0 ? .right : .left
-    let shouldDismissCard = abs(gesture.translation(in: self).x) > threshold
+    let shouldDismissCard = abs(gesture.translation(in: self).x) > CardView.threshold
 
     UIView
       .animate(withDuration: 0.75,
@@ -160,12 +170,9 @@ class CardView: UIView {
     print(location.x)
     let shouldAdvanceToNextPhoto = location.x > (frame.size.width / 2)
     if shouldAdvanceToNextPhoto {
-      currentImageIndex = min(currentImageIndex + 1, viewModel.images.count - 1)
+      viewModel.nextPhoto()
     } else {
-      currentImageIndex = max(0, currentImageIndex - 1)
+      viewModel.previousPhoto()
     }
-    barStackView.arrangedSubviews.forEach { $0.backgroundColor = barDeselectedColor }
-    barStackView.arrangedSubviews[currentImageIndex].backgroundColor = barSelectedColor
-    imageView.image = viewModel?.images[currentImageIndex]
   }
 }

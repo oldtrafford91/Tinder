@@ -1,6 +1,7 @@
 import UIKit
 
-struct CardViewViewModel {
+class CardViewViewModel {
+  typealias Observer<T> = (T) -> ()
   
   // MARK: Properties
   private let model: CardModelType
@@ -39,11 +40,28 @@ struct CardViewViewModel {
     }
   }
   
+  var currentImageIndex: Int = 0 {
+    didSet {
+      let image = images[currentImageIndex]
+      imageIndexObserver((currentImageIndex, image))
+    }
+  }
+  
+  var imageIndexObserver: Observer<(Int, UIImage)> = {_ in}
+  
   // MARK: - Initializer
   init(model: CardModelType) {
     self.model = model
   }
   
-  // MARK: - Helpers
+  // MARK: - Action
+  
+  func nextPhoto() {
+    currentImageIndex = min(currentImageIndex + 1, images.count - 1)
+  }
+  
+  func previousPhoto() {
+    currentImageIndex = max(0, currentImageIndex - 1)
+  }
 
 }
