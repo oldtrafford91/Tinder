@@ -17,17 +17,18 @@ class HomeViewController: UIViewController {
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    configureViewHierachy()
+    setupViewHierachy()
   }
   
   // MARK: Setup
-  private func configureViewHierachy() {
+  private func setupViewHierachy() {
     view.backgroundColor = .systemBackground
-    configureContainerStackView()
-    configureDeckView()
+    setupContainerStackView()
+    setupTopStackView()
+    setupDeckView()
   }
   
-  private func configureContainerStackView() {
+  private func setupContainerStackView() {
     let containerStackView = UIStackView(arrangedSubviews: [topStackView, deckView,bottomStackView])
     containerStackView.axis = .vertical
     view.addSubview(containerStackView)
@@ -37,11 +38,23 @@ class HomeViewController: UIViewController {
     containerStackView.bringSubviewToFront(deckView)
   }
   
-  private func configureDeckView() {
+  private func setupTopStackView() {
+    topStackView.settingButton.addTarget(self, action: #selector(handleSettingButton(sender:)), for: .touchUpInside)
+  }
+  
+  private func setupDeckView() {
     for model in deckModel {
       let cardView = CardView(viewModel: CardViewViewModel(model: model))
       deckView.addSubview(cardView)
       cardView.fillSuperview()
     }
+  }
+  
+  // MARK: Action
+  
+  @objc private func handleSettingButton(sender button: UIButton ) {
+    let registrationVC = RegistrationViewController()
+    registrationVC.modalPresentationStyle = .fullScreen
+    present(registrationVC, animated: true, completion: nil)
   }
 }
