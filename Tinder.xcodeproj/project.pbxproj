@@ -22,6 +22,7 @@
 		E1C9D6A623D04D3A006489FA /* CardModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9D6A523D04D3A006489FA /* CardModelType.swift */; };
 		E1ED4E9023D14C11001DB943 /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED4E8F23D14C11001DB943 /* UIView+Utilities.swift */; };
 		E1ED4E9323D1813B001DB943 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED4E9223D1813B001DB943 /* RegistrationViewController.swift */; };
+		E1ED4E9523D18BD9001DB943 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED4E9423D18BD9001DB943 /* FormTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		E1C9D6A523D04D3A006489FA /* CardModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModelType.swift; sourceTree = "<group>"; };
 		E1ED4E8F23D14C11001DB943 /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
 		E1ED4E9223D1813B001DB943 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		E1ED4E9423D18BD9001DB943 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				E1ED4E9223D1813B001DB943 /* RegistrationViewController.swift */,
+				E1ED4E9423D18BD9001DB943 /* FormTextField.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				E1C9D6A423D04D1B006489FA /* Advertiser.swift in Sources */,
 				E114812F23CEB04D00457392 /* CardView.swift in Sources */,
 				E114812423CDBE9100457392 /* HomeViewController.swift in Sources */,
+				E1ED4E9523D18BD9001DB943 /* FormTextField.swift in Sources */,
 				E114812723CDC70300457392 /* UIView+Layout.swift in Sources */,
 				E1ED4E9323D1813B001DB943 /* RegistrationViewController.swift in Sources */,
 				E1ABB92623D0182300A643FC /* CardViewViewModel.swift in Sources */,
