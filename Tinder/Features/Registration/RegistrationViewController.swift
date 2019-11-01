@@ -46,12 +46,29 @@ class RegistrationViewController: UIViewController {
     return button
   }()
   
-  lazy var stackView = UIStackView(arrangedSubviews: [
+  let gradientLayer: CAGradientLayer = {
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.colors = [#colorLiteral(red: 1, green: 0.3568627451, blue: 0.2156862745, alpha: 1).cgColor, #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1).cgColor ]
+    gradientLayer.locations = [0.5, 1]
+    return gradientLayer
+  }()
+  
+  lazy var stackView: UIStackView = {
+    let stackView = UIStackView(arrangedSubviews: [
+      fullNameTextField,
+      emailTextField,
+      passwordTextField,
+      registerButton
+    ])
+    stackView.distribution = .fillEqually
+    stackView.axis = .vertical
+    stackView.spacing = 8
+    return stackView
+  }()
+  
+  lazy var containerStackView = UIStackView(arrangedSubviews: [
     selectPhotoButton,
-    fullNameTextField,
-    emailTextField,
-    passwordTextField,
-    registerButton
+    stackView
   ])
   
   // MARK: - View Life Cycle
@@ -61,9 +78,25 @@ class RegistrationViewController: UIViewController {
     setupTapGesture()
   }
   
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    gradientLayer.frame = view.bounds
+  }
+  
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self)
+  }
+  
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    if traitCollection.verticalSizeClass == .compact {
+      containerStackView.axis = .horizontal
+      containerStackView.distribution = .fillEqually
+    } else {
+      containerStackView.axis = .vertical
+    }
+
   }
   
   // MARK: - Setup
@@ -74,18 +107,14 @@ class RegistrationViewController: UIViewController {
   }
   
   private func setupContainerStackView() {
-    view.addSubview(stackView)
-    stackView.axis = .vertical
-    stackView.spacing = 8
-    stackView.anchor(top: nil, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
-    stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    
+    view.addSubview(containerStackView)
+    containerStackView.axis = .vertical
+    containerStackView.spacing = 8
+    containerStackView.anchor(top: nil, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
+    containerStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
   }
   
   private func setupGradientLayer() {
-    let gradientLayer = CAGradientLayer()
-    gradientLayer.colors = [#colorLiteral(red: 1, green: 0.3568627451, blue: 0.2156862745, alpha: 1).cgColor, #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1).cgColor ]
-    gradientLayer.locations = [0.5, 1]
     view.layer.addSublayer(gradientLayer)
     gradientLayer.frame = view.bounds
   }
@@ -111,7 +140,7 @@ class RegistrationViewController: UIViewController {
       return
     }
     let keyboardFrame = value.cgRectValue
-    let bottomSpace = view.frame.height - stackView.frame.height - stackView.frame.origin.y
+    let bottomSpace = view.frame.height - containerStackView.frame.height - containerStackView.frame.origin.y
     let difference = keyboardFrame.height - bottomSpace
     view.transform = CGAffineTransform(translationX: 0, y: -difference - 8)
   }
