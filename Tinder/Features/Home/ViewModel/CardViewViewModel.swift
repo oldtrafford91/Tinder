@@ -43,11 +43,11 @@ class CardViewViewModel {
   var currentImageIndex: Int = 0 {
     didSet {
       let image = images[currentImageIndex]
-      imageIndexObserver((currentImageIndex, image))
+      onImageIndexChange((currentImageIndex, image))
     }
   }
   
-  var imageIndexObserver: Observer<(Int, UIImage)> = {_ in}
+  var onImageIndexChange: Observer<(Int, UIImage)> = { _ in }
   
   // MARK: - Initializer
   init(model: CardModelType) {

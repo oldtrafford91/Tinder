@@ -111,9 +111,9 @@ class CardView: UIView {
     }
     barStackView.subviews.first?.backgroundColor = CardView.barSelectedColor
     
-    viewModel.imageIndexObserver = { [weak self] (arg) in
-      let (index, image) = arg
+    viewModel.onImageIndexChange = { [weak self] (arg) in
       guard let self = self else { return }
+      let (index, image) = arg
       self.imageView.image = image
       self.barStackView.arrangedSubviews.forEach { $0.backgroundColor = CardView.barDeselectedColor }
       self.barStackView.arrangedSubviews[index].backgroundColor = CardView.barSelectedColor
