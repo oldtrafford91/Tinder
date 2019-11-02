@@ -1,9 +1,22 @@
-//
-//  RegistrationViewModel.swift
-//  Tinder
-//
-//  Created by Tran Tuan Hai on 1/18/20.
-//  Copyright © 2020 Tran Tuan Hai. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class RegistrationViewModel {
+  typealias Observer<T> = (T) -> ()
+  
+  
+  // MARK: - Properties
+  var fullnameInput: String? { didSet {checkFormValidity()} }
+  var emailInput: String? { didSet {checkFormValidity()} }
+  var passwordInput: String? { didSet {checkFormValidity()} }
+  
+  var onFormValidCheck: Observer<Bool> = { _ in }
+  
+  // MARK: Action
+  private func checkFormValidity() {
+    let isFormValid = fullnameInput.isNotEmpty() && emailInput.isNotEmpty() && passwordInput.isNotEmpty()
+    onFormValidCheck(isFormValid)
+  }
+  
+}
+
+
