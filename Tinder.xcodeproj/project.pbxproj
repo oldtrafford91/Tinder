@@ -138,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B9632723CA13CF00BF73EA /* Tinder */,
+				E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */,
 				E1B9632623CA13CF00BF73EA /* Products */,
 				340CF7C2D504E1192DBDD9D8 /* Pods */,
 				A4352CE2A9FEFEEFE875CED9 /* Frameworks */,
@@ -184,7 +185,6 @@
 		E1B9633E23CA145000BF73EA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */,
 				E1B9633123CA13D900BF73EA /* Assets.xcassets */,
 				E1B9633323CA13D900BF73EA /* LaunchScreen.storyboard */,
 				E1B9633623CA13D900BF73EA /* Info.plist */,
