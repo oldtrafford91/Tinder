@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		E114812F23CEB04D00457392 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114812E23CEB04D00457392 /* CardView.swift */; };
 		E13A58A823D294E9008CE5DF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */; };
 		E13A58AD23D2AC3A008CE5DF /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */; };
+		E13A58B223D2C56A008CE5DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */; };
 		E1ABB92623D0182300A643FC /* CardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ABB92523D0182300A643FC /* CardViewViewModel.swift */; };
 		E1ABB92823D01AF000A643FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ABB92723D01AF000A643FC /* User.swift */; };
 		E1B9632923CA13CF00BF73EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9632823CA13CF00BF73EA /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		E114812E23CEB04D00457392 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1ABB92523D0182300A643FC /* CardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewViewModel.swift; sourceTree = "<group>"; };
 		E1ABB92723D01AF000A643FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E1B9632523CA13CF00BF73EA /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +74,6 @@
 				3CDACD9F02B191A181C109CD /* Pods-Tinder.debug.xcconfig */,
 				B7FC3F54895DC7F8AA266E26 /* Pods-Tinder.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -183,6 +184,7 @@
 		E1B9633E23CA145000BF73EA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */,
 				E1B9633123CA13D900BF73EA /* Assets.xcassets */,
 				E1B9633323CA13D900BF73EA /* LaunchScreen.storyboard */,
 				E1B9633623CA13D900BF73EA /* Info.plist */,
@@ -270,6 +272,7 @@
 			files = (
 				E1B9633523CA13D900BF73EA /* LaunchScreen.storyboard in Resources */,
 				E1B9633223CA13D900BF73EA /* Assets.xcassets in Resources */,
+				E13A58B223D2C56A008CE5DF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
