@@ -95,6 +95,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E13A58B323D2D667008CE5DF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E1ED4E9223D1813B001DB943 /* RegistrationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E13A58B423D2D670008CE5DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1ED4E9423D18BD9001DB943 /* FormTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E13A58B523D2D674008CE5DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E156DF1323D03B2E0081207A /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,9 +227,9 @@
 		E1ED4E9123D18114001DB943 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				E1ED4E9223D1813B001DB943 /* RegistrationViewController.swift */,
-				E1ED4E9423D18BD9001DB943 /* FormTextField.swift */,
-				E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */,
+				E13A58B523D2D674008CE5DF /* ViewModel */,
+				E13A58B423D2D670008CE5DF /* View */,
+				E13A58B323D2D667008CE5DF /* ViewController */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
