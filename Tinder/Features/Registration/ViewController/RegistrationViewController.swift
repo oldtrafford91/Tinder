@@ -10,6 +10,9 @@ class RegistrationViewController: UIViewController {
     button.backgroundColor = .white
     button.setTitleColor(.black, for: .normal)
     button.layer.cornerRadius = 12
+    button.imageView?.contentMode = .scaleAspectFill
+    button.clipsToBounds = true
+    button.addTarget(self, action: #selector(selectPhoto), for: .touchUpInside)
     button.heightAnchor.constraint(equalToConstant: 270).isActive = true
     return button
   }()
@@ -48,6 +51,7 @@ class RegistrationViewController: UIViewController {
     button.isEnabled = false
     button.heightAnchor.constraint(equalToConstant: 44).isActive = true
     button.layer.cornerRadius = 22
+    button.addTarget(self, action: #selector(register), for: .touchUpInside)
     return button
   }()
   
@@ -189,6 +193,32 @@ class RegistrationViewController: UIViewController {
       viewModel.passwordInput = textField.text
     }
   }
+  
+  @objc private func selectPhoto() {
+    let imagePicker = UIImagePickerController()
+    imagePicker.delegate = self
+    imagePicker.modalPresentationStyle = .fullScreen
+    imagePicker.allowsEditing = true
+    
+    present(imagePicker, animated: true, completion: nil)
+  }
+  
+  @objc private func register() {
+    
+  }
+}
+
+extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    dismiss(animated: true)
+  }
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let image = info[.editedImage] as? UIImage else { return }
+    selectPhotoButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+    dismiss(animated: true)
+  }
+  
 }
 
 
