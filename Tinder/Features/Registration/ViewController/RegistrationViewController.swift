@@ -165,6 +165,12 @@ class RegistrationViewController: UIViewController {
         self.registerButton.setTitleColor(.gray, for: .normal)
       }
     }
+    
+    viewModel.onImageSelected = { [weak self] image in
+      guard let self = self else { return }
+      guard let image = image else { return }
+      self.selectPhotoButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
   }
   
   // MARK: Action
@@ -219,7 +225,7 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     guard let image = info[.editedImage] as? UIImage else { return }
-    selectPhotoButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+    viewModel.buttonImage = image
     dismiss(animated: true)
   }
   
