@@ -97,6 +97,11 @@ class RegistrationViewController: UIViewController {
     gradientLayer.frame = view.bounds
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setupNotificationObservers()
+  }
+  
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self)
@@ -118,7 +123,6 @@ class RegistrationViewController: UIViewController {
   private func setupViewHierachy() {
     setupGradientLayer()
     setupContainerStackView()
-    setupNotificationObservers()
   }
   
   private func setupContainerStackView() {
