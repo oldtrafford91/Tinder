@@ -13,4 +13,5 @@ target 'Tinder' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
+  pod 'PromiseKit'
 end
