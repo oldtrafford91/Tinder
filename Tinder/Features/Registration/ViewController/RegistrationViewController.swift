@@ -1,4 +1,6 @@
 import UIKit
+import Firebase
+import JGProgressHUD
 
 class RegistrationViewController: UIViewController {
   
@@ -20,6 +22,8 @@ class RegistrationViewController: UIViewController {
   private let fullNameTextField: FormTextField = {
     let textField = FormTextField(padding: 24, height: 44)
     textField.placeholder = "Please enter your full name"
+    textField.autocorrectionType = .no
+    textField.autocapitalizationType = .allCharacters
     textField.addTarget(self, action: #selector(handleTextFieldChange(_:)), for: .editingChanged)
     return textField
   }()
@@ -27,6 +31,7 @@ class RegistrationViewController: UIViewController {
   private let emailTextField: FormTextField = {
     let textField = FormTextField(padding: 24, height: 44)
     textField.keyboardType = .emailAddress
+    textField.autocapitalizationType = .none
     textField.placeholder = "Please enter your email"
     textField.addTarget(self, action: #selector(handleTextFieldChange(_:)), for: .editingChanged)
     return textField
@@ -38,6 +43,7 @@ class RegistrationViewController: UIViewController {
     textField.addTarget(self, action: #selector(handleTextFieldChange(_:)), for: .editingChanged)
     textField.isSecureTextEntry = true
     textField.autocorrectionType = .no
+
     return textField
   }()
   
@@ -79,6 +85,8 @@ class RegistrationViewController: UIViewController {
     selectPhotoButton,
     stackView
   ])
+  
+  let registeringHUD = JGProgressHUD()
   
   // MARK: - Properties
   var viewModel = RegistrationViewModel()
@@ -171,6 +179,17 @@ class RegistrationViewController: UIViewController {
       guard let image = image else { return }
       self.selectPhotoButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
     }
+    
+    viewModel.onRegisteringStateChange = { [weak self] isRegistering in
+      guard let self = self else { return }
+      if isRegistering {
+        self.registeringHUD.textLabel.text = "Registering user"
+        self.registeringHUD.show(in: self.view)
+      } else {
+        self.registeringHUD.dismiss()
+      }
+      
+    }
   }
   
   // MARK: Action
@@ -214,7 +233,24 @@ class RegistrationViewController: UIViewController {
   }
   
   @objc private func register() {
-    
+    view.endEditing(true)
+    viewModel.signup { (result) in
+      switch result {
+      case .success():
+        print("Success sign up user")
+      case .failure(let error):
+        self.showHUDWithError(error as NSError)
+      }
+    }
+  }
+  
+  // MARK: - Helpers
+  private func showHUDWithError(_ error: NSError) {
+    let hud = JGProgressHUD()
+    hud.textLabel.text = "Failed registration"
+    hud.detailTextLabel.text = error.localizedDescription + "Code: \(error.code)"
+    hud.show(in: view)
+    hud.dismiss(afterDelay: 4)
   }
 }
 
@@ -228,7 +264,4 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
     viewModel.buttonImage = image
     dismiss(animated: true)
   }
-  
 }
-
-

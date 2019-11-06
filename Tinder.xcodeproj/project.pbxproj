@@ -16,6 +16,8 @@
 		E13A58A823D294E9008CE5DF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */; };
 		E13A58AD23D2AC3A008CE5DF /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */; };
 		E13A58B223D2C56A008CE5DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */; };
+		E1A2ED4323D4563B007CF073 /* FirebaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2ED4223D4563B007CF073 /* FirebaseUserService.swift */; };
+		E1A2ED4823D4C9E9007CF073 /* FirebaseStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2ED4723D4C9E9007CF073 /* FirebaseStoreService.swift */; };
 		E1ABB92623D0182300A643FC /* CardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ABB92523D0182300A643FC /* CardViewViewModel.swift */; };
 		E1ABB92823D01AF000A643FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ABB92723D01AF000A643FC /* User.swift */; };
 		E1B9632923CA13CF00BF73EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9632823CA13CF00BF73EA /* AppDelegate.swift */; };
@@ -41,6 +43,8 @@
 		E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1A2ED4223D4563B007CF073 /* FirebaseUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserService.swift; sourceTree = "<group>"; };
+		E1A2ED4723D4C9E9007CF073 /* FirebaseStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreService.swift; sourceTree = "<group>"; };
 		E1ABB92523D0182300A643FC /* CardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewViewModel.swift; sourceTree = "<group>"; };
 		E1ABB92723D01AF000A643FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E1B9632523CA13CF00BF73EA /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E1A2ED4123D45622007CF073 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E1A2ED4223D4563B007CF073 /* FirebaseUserService.swift */,
+				E1A2ED4723D4C9E9007CF073 /* FirebaseStoreService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E1B9631C23CA13CF00BF73EA = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +193,7 @@
 		E1B9632723CA13CF00BF73EA /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				E1A2ED4123D45622007CF073 /* Services */,
 				E114812523CDC6D700457392 /* Extensions */,
 				E1B9633D23CA142A00BF73EA /* App */,
 				E1B9633C23CA140E00BF73EA /* Features */,
@@ -355,6 +369,7 @@
 				E1ED4E9523D18BD9001DB943 /* FormTextField.swift in Sources */,
 				E114812723CDC70300457392 /* UIView+Layout.swift in Sources */,
 				E13A58AD23D2AC3A008CE5DF /* Optional+Extensions.swift in Sources */,
+				E1A2ED4323D4563B007CF073 /* FirebaseUserService.swift in Sources */,
 				E1ED4E9323D1813B001DB943 /* RegistrationViewController.swift in Sources */,
 				E1ABB92623D0182300A643FC /* CardViewViewModel.swift in Sources */,
 				E1ED4E9023D14C11001DB943 /* UIView+Utilities.swift in Sources */,
@@ -362,6 +377,7 @@
 				E1ABB92823D01AF000A643FC /* User.swift in Sources */,
 				E13A58A823D294E9008CE5DF /* RegistrationViewModel.swift in Sources */,
 				E114812D23CE2DF000457392 /* TopNavigationStackView.swift in Sources */,
+				E1A2ED4823D4C9E9007CF073 /* FirebaseStoreService.swift in Sources */,
 				E1B9632923CA13CF00BF73EA /* AppDelegate.swift in Sources */,
 				E1B9632B23CA13CF00BF73EA /* SceneDelegate.swift in Sources */,
 				E1C9D6A623D04D3A006489FA /* CardModelType.swift in Sources */,

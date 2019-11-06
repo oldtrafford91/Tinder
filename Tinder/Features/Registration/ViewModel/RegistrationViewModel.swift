@@ -1,4 +1,5 @@
 import UIKit
+import PromiseKit
 
 class RegistrationViewModel {
   typealias Observer<T> = (T) -> ()
@@ -11,6 +12,7 @@ class RegistrationViewModel {
   
   var onFormValidCheck: Observer<Bool> = { _ in }
   var onImageSelected: Observer<UIImage?> = { _ in }
+  var onRegisteringStateChange: Observer<Bool> = { _ in }
 
   // MARK: Action
   private func checkFormValidity() {
@@ -18,6 +20,23 @@ class RegistrationViewModel {
     onFormValidCheck(isFormValid)
   }
   
+  func signup(completion: @escaping (Swift.Result<Void, Error>) -> ()){
+    onRegisteringStateChange(true)
+  
+    firstly {
+      FirebaseUserService.createUser(email: emailInput!, password: passwordInput!)
+    }.then { user in
+      FirebaseStorageService.uploadImage(image: self.buttonImage ?? UIImage())
+    }.then { url in
+      FirebaseUserService.saveUser(fullName: self.fullnameInput!, imageURL: url)
+    }.done { _ in
+      completion(.success(()))
+    }.ensure {
+      self.onRegisteringStateChange(false)
+    }.catch { error in
+      completion(.failure(error))
+    }
+  }
 }
 
 
