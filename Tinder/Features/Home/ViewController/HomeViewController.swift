@@ -1,4 +1,6 @@
 import UIKit
+import Firebase
+import JGProgressHUD
 
 class HomeViewController: UIViewController {
   
@@ -6,18 +8,16 @@ class HomeViewController: UIViewController {
   let topStackView = TopNavigationStackView()
   let deckView = UIView()
   let bottomStackView = HomeBottomControlsStackView()
+  let loadingHUD = JGProgressHUD()
   
   // MARK: Properties
-  let deckModel: [CardModelType] = [
-    User(name: "Kelly", age: 18, profession: "DJ", userImages: ["kelly1", "kelly2", "kelly3"]),
-    User(name: "Ngoc Trinh", age: 28, profession: "Model", userImages: ["ngoctrinh1", "ngoctrinh2", "ngoctrinh3"]),
-    Adveriser(title: "We build Windows and Azure", brandName: "Microsoft", brandImages: ["slide_out_menu_poster"])
-  ]
+  let viewModel = HomeViewModel()
   
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViewHierachy()
+    fetchUsers()
   }
   
   // MARK: Setup
@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     view.backgroundColor = .systemBackground
     setupContainerStackView()
     setupTopStackView()
-    setupDeckView()
+    setupViewModelBinding()
   }
   
   private func setupContainerStackView() {
@@ -43,10 +43,31 @@ class HomeViewController: UIViewController {
   }
   
   private func setupDeckView() {
-    for model in deckModel {
-      let cardView = CardView(viewModel: CardViewViewModel(model: model))
+    for cardViewModel in viewModel.cardViewModels {
+      let cardView = CardView(viewModel: cardViewModel)
       deckView.addSubview(cardView)
       cardView.fillSuperview()
+    }
+  }
+  
+  private func setupViewModelBinding() {
+    viewModel.onLoadingStateChange = { [weak self] isLoading in
+      guard let self = self else { return }
+      if isLoading {
+        self.loadingHUD.show(in: self.view)
+      } else {
+        self.loadingHUD.dismiss()
+      }
+    }
+    
+    viewModel.onFetchUserFailed = { [weak self] error in
+      guard let self = self else { return }
+      self.showHUDWithError(title: "Fetch User Failed", error: error, in: self.view)
+    }
+    
+    viewModel.onFetchedUser = { [weak self] _ in
+      guard let self = self else { return }
+      self.setupDeckView()
     }
   }
   
@@ -56,5 +77,9 @@ class HomeViewController: UIViewController {
     let registrationVC = RegistrationViewController()
     registrationVC.modalPresentationStyle = .fullScreen
     present(registrationVC, animated: true, completion: nil)
+  }
+  
+  private func fetchUsers() {
+    viewModel.fetchUsers()
   }
 }

@@ -16,6 +16,8 @@
 		E13A58A823D294E9008CE5DF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */; };
 		E13A58AD23D2AC3A008CE5DF /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */; };
 		E13A58B223D2C56A008CE5DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */; };
+		E14C124723D54F6A00211F3B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C124623D54F6A00211F3B /* HomeViewModel.swift */; };
+		E14C124A23D5BCF100211F3B /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C124923D5BCF100211F3B /* UIViewController+HUD.swift */; };
 		E1A2ED4323D4563B007CF073 /* FirebaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2ED4223D4563B007CF073 /* FirebaseUserService.swift */; };
 		E1A2ED4823D4C9E9007CF073 /* FirebaseStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2ED4723D4C9E9007CF073 /* FirebaseStoreService.swift */; };
 		E1ABB92623D0182300A643FC /* CardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ABB92523D0182300A643FC /* CardViewViewModel.swift */; };
@@ -43,6 +45,8 @@
 		E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E14C124623D54F6A00211F3B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E14C124923D5BCF100211F3B /* UIViewController+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
 		E1A2ED4223D4563B007CF073 /* FirebaseUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserService.swift; sourceTree = "<group>"; };
 		E1A2ED4723D4C9E9007CF073 /* FirebaseStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreService.swift; sourceTree = "<group>"; };
 		E1ABB92523D0182300A643FC /* CardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewViewModel.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			children = (
 				E114812623CDC70300457392 /* UIView+Layout.swift */,
 				E1ED4E8F23D14C11001DB943 /* UIView+Utilities.swift */,
+				E14C124923D5BCF100211F3B /* UIViewController+HUD.swift */,
 				E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */,
 			);
 			path = Extensions;
@@ -121,6 +126,15 @@
 				E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E14C124823D59FF900211F3B /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				E114812E23CEB04D00457392 /* CardView.swift */,
+				E1ABB92523D0182300A643FC /* CardViewViewModel.swift */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		E156DF1323D03B2E0081207A /* Home */ = {
@@ -155,9 +169,9 @@
 		E156DF1623D03B8F0081207A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E14C124823D59FF900211F3B /* CardView */,
 				E114812823CE0F3E00457392 /* HomeBottomControlsStackView.swift */,
 				E114812C23CE2DF000457392 /* TopNavigationStackView.swift */,
-				E114812E23CEB04D00457392 /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,7 +247,7 @@
 		E1C9D6A223D0491E006489FA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				E1ABB92523D0182300A643FC /* CardViewViewModel.swift */,
+				E14C124623D54F6A00211F3B /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -363,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E14C124723D54F6A00211F3B /* HomeViewModel.swift in Sources */,
 				E1C9D6A423D04D1B006489FA /* Advertiser.swift in Sources */,
 				E114812F23CEB04D00457392 /* CardView.swift in Sources */,
 				E114812423CDBE9100457392 /* HomeViewController.swift in Sources */,
@@ -372,6 +387,7 @@
 				E1A2ED4323D4563B007CF073 /* FirebaseUserService.swift in Sources */,
 				E1ED4E9323D1813B001DB943 /* RegistrationViewController.swift in Sources */,
 				E1ABB92623D0182300A643FC /* CardViewViewModel.swift in Sources */,
+				E14C124A23D5BCF100211F3B /* UIViewController+HUD.swift in Sources */,
 				E1ED4E9023D14C11001DB943 /* UIView+Utilities.swift in Sources */,
 				E114812923CE0F3E00457392 /* HomeBottomControlsStackView.swift in Sources */,
 				E1ABB92823D01AF000A643FC /* User.swift in Sources */,

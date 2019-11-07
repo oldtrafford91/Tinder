@@ -99,12 +99,12 @@ class CardView: UIView {
   
   func setup(with viewModel: CardViewViewModel) {
     self.viewModel = viewModel
-
-    imageView.image = viewModel.images.first
+    imageView.kf.setImage(with: viewModel.imageURLs.first)
     informationLabel.attributedText = viewModel.information
     informationLabel.textAlignment = viewModel.textAlignment
     
-    (0...viewModel.images.count-1).forEach { _ in
+    
+    (0..<viewModel.imageURLs.count).forEach { _ in
       let barView = UIView()
       barView.backgroundColor = CardView.barDeselectedColor
       barStackView.addArrangedSubview(barView)
@@ -113,8 +113,8 @@ class CardView: UIView {
     
     viewModel.onImageIndexChange = { [weak self] (arg) in
       guard let self = self else { return }
-      let (index, image) = arg
-      self.imageView.image = image
+      let (index, imageURL) = arg
+      self.imageView.kf.setImage(with: imageURL)
       self.barStackView.arrangedSubviews.forEach { $0.backgroundColor = CardView.barDeselectedColor }
       self.barStackView.arrangedSubviews[index].backgroundColor = CardView.barSelectedColor
     }
@@ -148,21 +148,21 @@ class CardView: UIView {
     let shouldDismissCard = abs(gesture.translation(in: self).x) > CardView.threshold
 
     UIView
-      .animate(withDuration: 0.75,
-                   delay: 0,
+      .animate(withDuration              : 0.75,
+                   delay                 : 0,
                    usingSpringWithDamping: 0.6,
-                   initialSpringVelocity: 0.1,
-                   options: .curveEaseOut,
-                   animations: {
-                    if shouldDismissCard {
+                   initialSpringVelocity : 0.1,
+                   options               : .curveEaseOut,
+                   animations            : {
+                     if shouldDismissCard {
                       self.transform = CGAffineTransform(translationX: 600 * translationDirection.rawValue , y: 0)
-                    } else {
+                      } else {
                       self.transform = .identity
-                    }
+                      }
 
-      }, completion: { _ in
-//        self.transform = .identity
-      })
+                  }, completion: { _ in
+//                  self.transform = .identity
+                  })
   }
   
   @objc private func handleTap(_ gesture: UITapGestureRecognizer) {

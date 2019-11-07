@@ -16,7 +16,7 @@ class FirebaseUserService {
     }
   }
   
-  static func saveUser(fullName: String, imageURL: String) -> Promise<Void>{
+  static func saveUser(fullName: String, imageURL: String) -> Promise<Void> {
     return Promise { seal in
       guard let userId = Auth.auth().currentUser?.uid else {
         return
@@ -31,6 +31,26 @@ class FirebaseUserService {
         } else {
           seal.fulfill(())
         }
+      }
+    }
+  }
+  
+  static func fetchUsers() -> Promise<[User]> {
+    
+    return Promise { seal in
+
+      Firestore.firestore().collection("users").getDocuments(source: .server) { (snapshot, error) in
+        if let error = error {
+          seal.reject(error)
+          return
+        }
+        
+        guard let snapshot = snapshot else { return }
+        let users = snapshot.documents.map { snapshot -> User in
+          let userDict = snapshot.data()
+          return User(dictionary: userDict)
+        }
+        seal.fulfill(users)
       }
     }
   }

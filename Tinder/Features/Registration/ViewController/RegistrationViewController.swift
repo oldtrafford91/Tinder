@@ -23,7 +23,7 @@ class RegistrationViewController: UIViewController {
     let textField = FormTextField(padding: 24, height: 44)
     textField.placeholder = "Please enter your full name"
     textField.autocorrectionType = .no
-    textField.autocapitalizationType = .allCharacters
+    textField.autocapitalizationType = .words
     textField.addTarget(self, action: #selector(handleTextFieldChange(_:)), for: .editingChanged)
     return textField
   }()
@@ -227,7 +227,6 @@ class RegistrationViewController: UIViewController {
     let imagePicker = UIImagePickerController()
     imagePicker.delegate = self
     imagePicker.modalPresentationStyle = .fullScreen
-    imagePicker.allowsEditing = true
     
     present(imagePicker, animated: true, completion: nil)
   }
@@ -239,18 +238,9 @@ class RegistrationViewController: UIViewController {
       case .success():
         print("Success sign up user")
       case .failure(let error):
-        self.showHUDWithError(error as NSError)
+        self.showHUDWithError(title: "Failed Registration", error: error, in: self.view)
       }
     }
-  }
-  
-  // MARK: - Helpers
-  private func showHUDWithError(_ error: NSError) {
-    let hud = JGProgressHUD()
-    hud.textLabel.text = "Failed registration"
-    hud.detailTextLabel.text = error.localizedDescription + "Code: \(error.code)"
-    hud.show(in: view)
-    hud.dismiss(afterDelay: 4)
   }
 }
 
@@ -260,7 +250,7 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
   }
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    guard let image = info[.editedImage] as? UIImage else { return }
+    guard let image = info[.originalImage] as? UIImage else { return }
     viewModel.buttonImage = image
     dismiss(animated: true)
   }
