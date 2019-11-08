@@ -1,11 +1,18 @@
 import UIKit
 
 class HomeBottomControlsStackView: UIStackView {
+
+  // MARK: - Subviews
+  let refreshButton: UIButton = makeImageButton(image: #imageLiteral(resourceName: "refresh_circle"))
+  let dislikeButton: UIButton = makeImageButton(image: #imageLiteral(resourceName: "dismiss_circle"))
+  let superLikeButton: UIButton = makeImageButton(image: #imageLiteral(resourceName: "super_like_circle"))
+  let likeButton: UIButton = makeImageButton(image: #imageLiteral(resourceName: "like_circle"))
+  let specialButton: UIButton = makeImageButton(image: #imageLiteral(resourceName: "boost_circle"))
   
   // MARK: - Initializer
   override init(frame: CGRect) {
     super.init(frame: frame)
-    configure()
+    setup()
   }
   
   required init(coder: NSCoder) {
@@ -13,18 +20,19 @@ class HomeBottomControlsStackView: UIStackView {
   }
   
   // MARK: - Setup
-  private func configure() {
-    let subViews = [ #imageLiteral(resourceName: "refresh_circle"), #imageLiteral(resourceName: "dismiss_circle"), #imageLiteral(resourceName: "super_like_circle"), #imageLiteral(resourceName: "like_circle"), #imageLiteral(resourceName: "boost_circle")].map {
-      UIButton.systemButton(with: $0.withRenderingMode(.alwaysOriginal),
-                            target: nil,
-                            action: nil)
-    }
-    subViews.forEach {
+  private func setup() {
+    [refreshButton, dislikeButton, superLikeButton, likeButton, specialButton].forEach {
       addArrangedSubview($0)
     }
     heightAnchor.constraint(equalToConstant: 100).isActive = true
     axis = .horizontal
     alignment = .center
     distribution = .fillEqually
+  }
+  
+  private static func makeImageButton(image: UIImage) -> UIButton {
+    return UIButton.systemButton(with: image.withRenderingMode(.alwaysOriginal),
+    target: nil,
+    action: nil)
   }
 }

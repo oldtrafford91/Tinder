@@ -35,11 +35,14 @@ class FirebaseUserService {
     }
   }
   
-  static func fetchUsers() -> Promise<[User]> {
+  static func fetchUsers(lastFetchedUser: User?) -> Promise<[User]> {
     
     return Promise { seal in
-
-      Firestore.firestore().collection("users").getDocuments(source: .server) { (snapshot, error) in
+      let query = Firestore.firestore().collection("users")
+        .order(by: "uid", descending: false)
+        .start(after: [lastFetchedUser?.userId ?? ""])
+        .limit(to: 2)
+      query.getDocuments(source: .server) { (snapshot, error) in
         if let error = error {
           seal.reject(error)
           return

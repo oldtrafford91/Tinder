@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     view.backgroundColor = .systemBackground
     setupContainerStackView()
     setupTopStackView()
+    setupBottomStackView()
     setupViewModelBinding()
   }
   
@@ -46,12 +47,17 @@ class HomeViewController: UIViewController {
     for cardViewModel in viewModel.cardViewModels {
       let cardView = CardView(viewModel: cardViewModel)
       deckView.addSubview(cardView)
+      deckView.sendSubviewToBack(cardView)
       cardView.fillSuperview()
     }
   }
   
+  private func setupBottomStackView() {
+    bottomStackView.refreshButton.addTarget(self, action: #selector(handleRefreshButton(sender:)), for: .touchUpInside)
+  }
+  
   private func setupViewModelBinding() {
-    viewModel.onLoadingStateChange = { [weak self] isLoading in
+    viewModel.onFetchingUser = { [weak self] isLoading in
       guard let self = self else { return }
       if isLoading {
         self.loadingHUD.show(in: self.view)
@@ -77,6 +83,10 @@ class HomeViewController: UIViewController {
     let registrationVC = RegistrationViewController()
     registrationVC.modalPresentationStyle = .fullScreen
     present(registrationVC, animated: true, completion: nil)
+  }
+  
+  @objc private func handleRefreshButton(sender button: UIButton ) {
+    fetchUsers()
   }
   
   private func fetchUsers() {

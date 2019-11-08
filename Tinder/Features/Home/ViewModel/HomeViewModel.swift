@@ -4,29 +4,31 @@ import PromiseKit
 class HomeViewModel {
   typealias Observer<T> = (T) -> ()
   
+  // MARK: - Properties
   private var users: [User] = [] {
     didSet {
       cardViewModels = makeCardViewModels(from: users)
     }
   }
   var cardViewModels: [CardViewViewModel] = []
-  private var isLoading = false { didSet { onLoadingStateChange(isLoading) } }
+  var lastFetchedUser: User?
   
-  var onLoadingStateChange: Observer<Bool> = { _ in }
+  var onFetchingUser: Observer<Bool> = { _ in }
   var onFetchedUser: Observer<[User]> = { _ in }
   var onFetchUserFailed: Observer<Error> = { _ in}
   
   // MARK: - Action
   
   func fetchUsers() {
-    isLoading = true
+    onFetchingUser(true)
     firstly {
-      FirebaseUserService.fetchUsers()
+      FirebaseUserService.fetchUsers(lastFetchedUser: lastFetchedUser)
     }.done { users in
       self.users = users
+      self.lastFetchedUser = users.last
       self.onFetchedUser(users)
     }.ensure {
-      self.isLoading = false
+      self.onFetchingUser(false)
     }.catch { error in
       self.onFetchUserFailed(error)
     }
