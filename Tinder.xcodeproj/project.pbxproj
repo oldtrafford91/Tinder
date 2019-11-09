@@ -153,7 +153,6 @@
 				E1C9D6A223D0491E006489FA /* ViewModel */,
 				E156DF1623D03B8F0081207A /* View */,
 				E156DF1523D03B850081207A /* ViewController */,
-				E156DF1423D03B430081207A /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -217,9 +216,10 @@
 		E1B9632723CA13CF00BF73EA /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				E1B9633D23CA142A00BF73EA /* App */,
+				E156DF1423D03B430081207A /* Model */,
 				E1A2ED4123D45622007CF073 /* Services */,
 				E114812523CDC6D700457392 /* Extensions */,
-				E1B9633D23CA142A00BF73EA /* App */,
 				E1B9633C23CA140E00BF73EA /* Features */,
 				E1B9633E23CA145000BF73EA /* Resources */,
 			);
