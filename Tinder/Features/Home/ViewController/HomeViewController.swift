@@ -80,9 +80,10 @@ class HomeViewController: UIViewController {
   // MARK: Action
   
   @objc private func handleSettingButton(sender button: UIButton ) {
-    let registrationVC = RegistrationViewController()
-    registrationVC.modalPresentationStyle = .fullScreen
-    present(registrationVC, animated: true, completion: nil)
+    let settingVC = SettingViewController()
+    let settingNVC = UINavigationController(rootViewController: settingVC)
+    settingNVC.modalPresentationStyle = .fullScreen
+    present(settingNVC, animated: true, completion: nil)
   }
   
   @objc private func handleRefreshButton(sender button: UIButton ) {

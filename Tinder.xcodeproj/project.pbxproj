@@ -14,6 +14,8 @@
 		E114812D23CE2DF000457392 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114812C23CE2DF000457392 /* TopNavigationStackView.swift */; };
 		E114812F23CEB04D00457392 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114812E23CEB04D00457392 /* CardView.swift */; };
 		E137B4D523D6F4530074C28B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137B4D423D6F4530074C28B /* SettingViewController.swift */; };
+		E137B4D723D6FD1D0074C28B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137B4D623D6FD1D0074C28B /* UIButton+Extensions.swift */; };
+		E137B4D923D70C220074C28B /* CustomImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137B4D823D70C220074C28B /* CustomImagePickerController.swift */; };
 		E13A58A823D294E9008CE5DF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */; };
 		E13A58AD23D2AC3A008CE5DF /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */; };
 		E13A58B223D2C56A008CE5DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */; };
@@ -44,6 +46,8 @@
 		E114812C23CE2DF000457392 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 		E114812E23CEB04D00457392 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E137B4D423D6F4530074C28B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E137B4D623D6FD1D0074C28B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		E137B4D823D70C220074C28B /* CustomImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePickerController.swift; sourceTree = "<group>"; };
 		E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				E1ED4E8F23D14C11001DB943 /* UIView+Utilities.swift */,
 				E14C124923D5BCF100211F3B /* UIViewController+HUD.swift */,
 				E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */,
+				E137B4D623D6FD1D0074C28B /* UIButton+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				E137B4D423D6F4530074C28B /* SettingViewController.swift */,
+				E137B4D823D70C220074C28B /* CustomImagePickerController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -397,7 +403,9 @@
 				E114812723CDC70300457392 /* UIView+Layout.swift in Sources */,
 				E13A58AD23D2AC3A008CE5DF /* Optional+Extensions.swift in Sources */,
 				E1A2ED4323D4563B007CF073 /* FirebaseUserService.swift in Sources */,
+				E137B4D723D6FD1D0074C28B /* UIButton+Extensions.swift in Sources */,
 				E1ED4E9323D1813B001DB943 /* RegistrationViewController.swift in Sources */,
+				E137B4D923D70C220074C28B /* CustomImagePickerController.swift in Sources */,
 				E1ABB92623D0182300A643FC /* CardViewViewModel.swift in Sources */,
 				E14C124A23D5BCF100211F3B /* UIViewController+HUD.swift in Sources */,
 				E1ED4E9023D14C11001DB943 /* UIView+Utilities.swift in Sources */,
