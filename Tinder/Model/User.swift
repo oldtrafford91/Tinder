@@ -1,6 +1,6 @@
 import Foundation
 
-struct User: CardModelType {
+struct User: CardItem {
   let userId: String
   let name: String
   var age: Int?

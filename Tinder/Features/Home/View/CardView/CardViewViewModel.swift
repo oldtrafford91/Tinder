@@ -4,7 +4,7 @@ class CardViewViewModel {
   typealias Observer<T> = (T) -> ()
   
   // MARK: Properties
-  private let model: CardModelType
+  private let model: CardItem
   
   var imageURLs: [URL] {
     if let user = model as? User {
@@ -53,7 +53,7 @@ class CardViewViewModel {
   var onImageIndexChange: Observer<(Int, URL)> = { _ in }
   
   // MARK: - Initializer
-  init(model: CardModelType) {
+  init(model: CardItem) {
     self.model = model
   }
   

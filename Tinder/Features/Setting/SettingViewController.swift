@@ -3,9 +3,8 @@ import UIKit
 class SettingViewController: UITableViewController {
   
   // MARK: - Subviews
-  let leftSelectPhotoButton = UIButton.makeSelectPhotoButton(target: self, action: #selector(handleSelectPhoto))
-  let upperRightSelectPhotoButton = UIButton.makeSelectPhotoButton(target: self, action: #selector(handleSelectPhoto))
-  let bottomRightSelectPhotoButton = UIButton.makeSelectPhotoButton(target: self, action: #selector(handleSelectPhoto))
+  let header = HeaderView()
+  
   // MARK: - Properties
   
   // MARK: - View Life Cycle
@@ -35,6 +34,14 @@ class SettingViewController: UITableViewController {
     tableView.tableFooterView = UIView()
     tableView.delegate = self
     tableView.dataSource = self
+    
+    setupTableHeaderView()
+  }
+  
+  private func setupTableHeaderView() {
+    header.leftSelectPhotoButton.addTarget(self, action: #selector(handleSelectPhoto(button:)), for: .touchUpInside)
+    header.upperRightSelectPhotoButton.addTarget(self, action: #selector(handleSelectPhoto(button:)), for: .touchUpInside)
+    header.bottomRightSelectPhotoButton.addTarget(self, action: #selector(handleSelectPhoto(button:)), for: .touchUpInside)
   }
   
   // MARK: - Action
@@ -65,22 +72,6 @@ class SettingViewController: UITableViewController {
 
 extension SettingViewController {
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let header = UIView()
-    header.backgroundColor = .blue
-    header.addSubview(leftSelectPhotoButton)
-    
-    let padding: CGFloat = 16
-    leftSelectPhotoButton.anchor(top: header.topAnchor, leading: header.leadingAnchor, bottom: header.bottomAnchor, trailing: nil, padding: .init(top: padding, left: padding, bottom: padding, right: 0))
-    
-    let rightStackView = UIStackView(arrangedSubviews: [upperRightSelectPhotoButton, bottomRightSelectPhotoButton])
-    rightStackView.axis = .vertical
-    rightStackView.distribution = .fillEqually
-    rightStackView.spacing = padding
-    
-    header.addSubview(rightStackView)
-    rightStackView.anchor(top: header.topAnchor, leading: leftSelectPhotoButton.trailingAnchor, bottom: header.bottomAnchor, trailing: header.trailingAnchor, padding: .init(top: padding, left: padding, bottom: padding, right: padding))
-    rightStackView.widthAnchor.constraint(equalTo: leftSelectPhotoButton.widthAnchor, multiplier: 1).isActive = true
-    
     return header
   }
   

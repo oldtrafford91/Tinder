@@ -1,6 +1,6 @@
 import Foundation
 
-struct Adveriser: CardModelType {
+struct Adveriser: CardItem {
   let title: String
   let brandName: String
   let brandImages: [String]
