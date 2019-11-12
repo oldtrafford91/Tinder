@@ -18,9 +18,7 @@ class HeaderView: UIView {
   
   
   private func setup() {
-    backgroundColor = .blue
     addSubview(leftSelectPhotoButton)
-    
     let padding: CGFloat = 16
     leftSelectPhotoButton.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, padding: .init(top: padding, left: padding, bottom: padding, right: 0))
     
@@ -28,7 +26,6 @@ class HeaderView: UIView {
     rightStackView.axis = .vertical
     rightStackView.distribution = .fillEqually
     rightStackView.spacing = padding
-    
     addSubview(rightStackView)
     rightStackView.anchor(top: topAnchor, leading: leftSelectPhotoButton.trailingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: padding, left: padding, bottom: padding, right: padding))
     rightStackView.widthAnchor.constraint(equalTo: leftSelectPhotoButton.widthAnchor, multiplier: 1).isActive = true

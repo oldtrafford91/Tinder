@@ -229,20 +229,20 @@
 				E156DF1423D03B430081207A /* Model */,
 				E1A2ED4123D45622007CF073 /* Services */,
 				E114812523CDC6D700457392 /* Extensions */,
-				E1B9633C23CA140E00BF73EA /* Features */,
+				E1B9633C23CA140E00BF73EA /* Modules */,
 				E1B9633E23CA145000BF73EA /* Resources */,
 			);
 			path = Tinder;
 			sourceTree = "<group>";
 		};
-		E1B9633C23CA140E00BF73EA /* Features */ = {
+		E1B9633C23CA140E00BF73EA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				E137B4D323D6F4240074C28B /* Setting */,
 				E1ED4E9123D18114001DB943 /* Registration */,
 				E156DF1323D03B2E0081207A /* Home */,
 			);
-			path = Features;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		E1B9633D23CA142A00BF73EA /* App */ = {

@@ -32,9 +32,8 @@ class SettingViewController: UITableViewController {
   private func setupTableView() {
     tableView.backgroundColor = .init(white: 0.95, alpha: 1)
     tableView.tableFooterView = UIView()
-    tableView.delegate = self
-    tableView.dataSource = self
-    
+    header.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 300)
+    tableView.tableHeaderView = header
     setupTableHeaderView()
   }
   
@@ -71,13 +70,23 @@ class SettingViewController: UITableViewController {
 }
 
 extension SettingViewController {
-  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    return header
-  }
+  
+
   
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return 300
+    return 20
   }
+  
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 5
+  }
+  
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+    return "section \(section)"
+  }
+  
+
 }
 
 extension SettingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
