@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		90F7E34BD8B2A2B06F87C110 /* Pods_Tinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE97D36C054834852953DF2 /* Pods_Tinder.framework */; };
 		E114812423CDBE9100457392 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114812323CDBE9100457392 /* HomeViewController.swift */; };
 		E114812723CDC70300457392 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114812623CDC70300457392 /* UIView+Layout.swift */; };
 		E114812923CE0F3E00457392 /* HomeBottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114812823CE0F3E00457392 /* HomeBottomControlsStackView.swift */; };
@@ -16,12 +15,39 @@
 		E137B4D523D6F4530074C28B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137B4D423D6F4530074C28B /* SettingViewController.swift */; };
 		E137B4D723D6FD1D0074C28B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137B4D623D6FD1D0074C28B /* UIButton+Extensions.swift */; };
 		E137B4D923D70C220074C28B /* CustomImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137B4D823D70C220074C28B /* CustomImagePickerController.swift */; };
-		E137B4DB23D715350074C28B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137B4DA23D715350074C28B /* HeaderView.swift */; };
+		E137B4DB23D715350074C28B /* SettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137B4DA23D715350074C28B /* SettingHeaderView.swift */; };
 		E13A58A823D294E9008CE5DF /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */; };
 		E13A58AD23D2AC3A008CE5DF /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */; };
 		E13A58B223D2C56A008CE5DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */; };
 		E14C124723D54F6A00211F3B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C124623D54F6A00211F3B /* HomeViewModel.swift */; };
 		E14C124A23D5BCF100211F3B /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C124923D5BCF100211F3B /* UIViewController+HUD.swift */; };
+		E16A9FA123F4753300765151 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F8423F4753200765151 /* GTMSessionFetcher.framework */; };
+		E16A9FA223F4753300765151 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F8523F4753200765151 /* FirebaseAuth.framework */; };
+		E16A9FA323F4753300765151 /* gRPC-Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F8823F4753200765151 /* gRPC-Core.framework */; };
+		E16A9FA423F4753300765151 /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F8923F4753200765151 /* FirebaseFirestore.framework */; };
+		E16A9FA523F4753300765151 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E16A9F8B23F4753200765151 /* gRPCCertificates-Cpp.bundle */; };
+		E16A9FA623F4753300765151 /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F8C23F4753200765151 /* BoringSSL-GRPC.framework */; };
+		E16A9FA723F4753300765151 /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F8D23F4753200765151 /* leveldb-library.framework */; };
+		E16A9FA823F4753300765151 /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F8E23F4753200765151 /* abseil.framework */; };
+		E16A9FA923F4753300765151 /* gRPC-C++.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F8F23F4753200765151 /* gRPC-C++.framework */; };
+		E16A9FAA23F4753300765151 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9123F4753200765151 /* GoogleDataTransport.framework */; };
+		E16A9FAB23F4753300765151 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9223F4753200765151 /* GoogleDataTransportCCTSupport.framework */; };
+		E16A9FAC23F4753300765151 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9323F4753200765151 /* GoogleAppMeasurement.framework */; };
+		E16A9FAD23F4753300765151 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9423F4753200765151 /* FirebaseCore.framework */; };
+		E16A9FAE23F4753300765151 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9523F4753200765151 /* FirebaseAnalytics.framework */; };
+		E16A9FAF23F4753300765151 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9623F4753200765151 /* GoogleUtilities.framework */; };
+		E16A9FB023F4753300765151 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9723F4753200765151 /* PromisesObjC.framework */; };
+		E16A9FB123F4753300765151 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9823F4753200765151 /* nanopb.framework */; };
+		E16A9FB223F4753300765151 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9923F4753200765151 /* FirebaseInstallations.framework */; };
+		E16A9FB323F4753300765151 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9A23F4753200765151 /* FIRAnalyticsConnector.framework */; };
+		E16A9FB423F4753300765151 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9B23F4753200765151 /* FirebaseInstanceID.framework */; };
+		E16A9FB523F4753300765151 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9C23F4753200765151 /* FirebaseCoreDiagnostics.framework */; };
+		E16A9FB623F4753300765151 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9E23F4753200765151 /* GTMSessionFetcher.framework */; };
+		E16A9FB723F4753300765151 /* FirebaseStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16A9F9F23F4753200765151 /* FirebaseStorage.framework */; };
+		E194B4FA23F48B8D0097B4D5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E194B4F923F48B8D0097B4D5 /* libc++.tbd */; };
+		E194B50023F48DF70097B4D5 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = E194B4FF23F48DF70097B4D5 /* PromiseKit */; };
+		E194B50323F48E7C0097B4D5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E194B50223F48E7C0097B4D5 /* Kingfisher */; };
+		E194B50623F490F40097B4D5 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E194B50523F490F40097B4D5 /* JGProgressHUD */; };
 		E1A2ED4323D4563B007CF073 /* FirebaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2ED4223D4563B007CF073 /* FirebaseUserService.swift */; };
 		E1A2ED4823D4C9E9007CF073 /* FirebaseStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2ED4723D4C9E9007CF073 /* FirebaseStoreService.swift */; };
 		E1ABB92623D0182300A643FC /* CardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ABB92523D0182300A643FC /* CardViewViewModel.swift */; };
@@ -30,6 +56,7 @@
 		E1B9632B23CA13CF00BF73EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9632A23CA13CF00BF73EA /* SceneDelegate.swift */; };
 		E1B9633223CA13D900BF73EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B9633123CA13D900BF73EA /* Assets.xcassets */; };
 		E1B9633523CA13D900BF73EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B9633323CA13D900BF73EA /* LaunchScreen.storyboard */; };
+		E1C2C01923F3E12100D56423 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C2C01823F3E12100D56423 /* SettingViewModel.swift */; };
 		E1C9D6A423D04D1B006489FA /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9D6A323D04D1B006489FA /* Advertiser.swift */; };
 		E1C9D6A623D04D3A006489FA /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9D6A523D04D3A006489FA /* CardItem.swift */; };
 		E1ED4E9023D14C11001DB943 /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED4E8F23D14C11001DB943 /* UIView+Utilities.swift */; };
@@ -38,9 +65,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3CDACD9F02B191A181C109CD /* Pods-Tinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tinder.debug.xcconfig"; path = "Target Support Files/Pods-Tinder/Pods-Tinder.debug.xcconfig"; sourceTree = "<group>"; };
-		4EE97D36C054834852953DF2 /* Pods_Tinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7FC3F54895DC7F8AA266E26 /* Pods-Tinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tinder.release.xcconfig"; path = "Target Support Files/Pods-Tinder/Pods-Tinder.release.xcconfig"; sourceTree = "<group>"; };
 		E114812323CDBE9100457392 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E114812623CDC70300457392 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		E114812823CE0F3E00457392 /* HomeBottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsStackView.swift; sourceTree = "<group>"; };
@@ -49,12 +73,39 @@
 		E137B4D423D6F4530074C28B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E137B4D623D6FD1D0074C28B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		E137B4D823D70C220074C28B /* CustomImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePickerController.swift; sourceTree = "<group>"; };
-		E137B4DA23D715350074C28B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E137B4DA23D715350074C28B /* SettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeaderView.swift; sourceTree = "<group>"; };
 		E13A58A723D294E9008CE5DF /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E13A58AC23D2AC3A008CE5DF /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		E13A58B123D2C56A008CE5DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E14C124623D54F6A00211F3B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E14C124923D5BCF100211F3B /* UIViewController+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
+		E16A9F8423F4753200765151 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = "<group>"; };
+		E16A9F8523F4753200765151 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
+		E16A9F8623F4753200765151 /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		E16A9F8823F4753200765151 /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "gRPC-Core.framework"; sourceTree = "<group>"; };
+		E16A9F8923F4753200765151 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = "<group>"; };
+		E16A9F8B23F4753200765151 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
+		E16A9F8C23F4753200765151 /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
+		E16A9F8D23F4753200765151 /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "leveldb-library.framework"; sourceTree = "<group>"; };
+		E16A9F8E23F4753200765151 /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = abseil.framework; sourceTree = "<group>"; };
+		E16A9F8F23F4753200765151 /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "gRPC-C++.framework"; sourceTree = "<group>"; };
+		E16A9F9123F4753200765151 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
+		E16A9F9223F4753200765151 /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
+		E16A9F9323F4753200765151 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		E16A9F9423F4753200765151 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
+		E16A9F9523F4753200765151 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		E16A9F9623F4753200765151 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		E16A9F9723F4753200765151 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromisesObjC.framework; sourceTree = "<group>"; };
+		E16A9F9823F4753200765151 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
+		E16A9F9923F4753200765151 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstallations.framework; sourceTree = "<group>"; };
+		E16A9F9A23F4753200765151 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		E16A9F9B23F4753200765151 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		E16A9F9C23F4753200765151 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		E16A9F9E23F4753200765151 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = "<group>"; };
+		E16A9F9F23F4753200765151 /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseStorage.framework; sourceTree = "<group>"; };
+		E16A9FA023F4753200765151 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E16A9FB823F475AB00765151 /* Tinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tinder-Bridging-Header.h"; sourceTree = "<group>"; };
+		E194B4F923F48B8D0097B4D5 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E1A2ED4223D4563B007CF073 /* FirebaseUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserService.swift; sourceTree = "<group>"; };
 		E1A2ED4723D4C9E9007CF073 /* FirebaseStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreService.swift; sourceTree = "<group>"; };
 		E1ABB92523D0182300A643FC /* CardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewViewModel.swift; sourceTree = "<group>"; };
@@ -65,6 +116,7 @@
 		E1B9633123CA13D900BF73EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1B9633423CA13D900BF73EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1B9633623CA13D900BF73EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1C2C01823F3E12100D56423 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		E1C9D6A323D04D1B006489FA /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
 		E1C9D6A523D04D3A006489FA /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		E1ED4E8F23D14C11001DB943 /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -77,7 +129,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90F7E34BD8B2A2B06F87C110 /* Pods_Tinder.framework in Frameworks */,
+				E194B50023F48DF70097B4D5 /* PromiseKit in Frameworks */,
+				E194B4FA23F48B8D0097B4D5 /* libc++.tbd in Frameworks */,
+				E16A9FA223F4753300765151 /* FirebaseAuth.framework in Frameworks */,
+				E16A9FAD23F4753300765151 /* FirebaseCore.framework in Frameworks */,
+				E16A9FB723F4753300765151 /* FirebaseStorage.framework in Frameworks */,
+				E16A9FB023F4753300765151 /* PromisesObjC.framework in Frameworks */,
+				E16A9FA423F4753300765151 /* FirebaseFirestore.framework in Frameworks */,
+				E194B50323F48E7C0097B4D5 /* Kingfisher in Frameworks */,
+				E16A9FB123F4753300765151 /* nanopb.framework in Frameworks */,
+				E16A9FB223F4753300765151 /* FirebaseInstallations.framework in Frameworks */,
+				E16A9FAF23F4753300765151 /* GoogleUtilities.framework in Frameworks */,
+				E16A9FB423F4753300765151 /* FirebaseInstanceID.framework in Frameworks */,
+				E16A9FAC23F4753300765151 /* GoogleAppMeasurement.framework in Frameworks */,
+				E16A9FAE23F4753300765151 /* FirebaseAnalytics.framework in Frameworks */,
+				E194B50623F490F40097B4D5 /* JGProgressHUD in Frameworks */,
+				E16A9FA923F4753300765151 /* gRPC-C++.framework in Frameworks */,
+				E16A9FA323F4753300765151 /* gRPC-Core.framework in Frameworks */,
+				E16A9FB623F4753300765151 /* GTMSessionFetcher.framework in Frameworks */,
+				E16A9FA123F4753300765151 /* GTMSessionFetcher.framework in Frameworks */,
+				E16A9FAA23F4753300765151 /* GoogleDataTransport.framework in Frameworks */,
+				E16A9FA823F4753300765151 /* abseil.framework in Frameworks */,
+				E16A9FA623F4753300765151 /* BoringSSL-GRPC.framework in Frameworks */,
+				E16A9FA723F4753300765151 /* leveldb-library.framework in Frameworks */,
+				E16A9FAB23F4753300765151 /* GoogleDataTransportCCTSupport.framework in Frameworks */,
+				E16A9FB523F4753300765151 /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				E16A9FB323F4753300765151 /* FIRAnalyticsConnector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +164,6 @@
 		340CF7C2D504E1192DBDD9D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3CDACD9F02B191A181C109CD /* Pods-Tinder.debug.xcconfig */,
-				B7FC3F54895DC7F8AA266E26 /* Pods-Tinder.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -96,7 +171,7 @@
 		A4352CE2A9FEFEEFE875CED9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4EE97D36C054834852953DF2 /* Pods_Tinder.framework */,
+				E194B4F923F48B8D0097B4D5 /* libc++.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,9 +191,9 @@
 		E137B4D323D6F4240074C28B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				E137B4D423D6F4530074C28B /* SettingViewController.swift */,
-				E137B4D823D70C220074C28B /* CustomImagePickerController.swift */,
-				E137B4DA23D715350074C28B /* HeaderView.swift */,
+				E1C2C01C23F43B2700D56423 /* View */,
+				E1C2C01A23F3E13E00D56423 /* ViewController */,
+				E1C2C01B23F3E14C00D56423 /* ViewModel */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -159,9 +234,9 @@
 		E156DF1323D03B2E0081207A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E1C9D6A223D0491E006489FA /* ViewModel */,
 				E156DF1623D03B8F0081207A /* View */,
 				E156DF1523D03B850081207A /* ViewController */,
+				E1C9D6A223D0491E006489FA /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -192,6 +267,78 @@
 				E114812C23CE2DF000457392 /* TopNavigationStackView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E16A9F8223F4753200765151 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E16A9FA023F4753200765151 /* module.modulemap */,
+				E16A9F8623F4753200765151 /* Firebase.h */,
+				E16A9F8323F4753200765151 /* FirebaseAuth */,
+				E16A9F8723F4753200765151 /* FirebaseFirestore */,
+				E16A9F9023F4753200765151 /* FirebaseAnalytics */,
+				E16A9F9D23F4753200765151 /* FirebaseStorage */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		E16A9F8323F4753200765151 /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				E16A9F8423F4753200765151 /* GTMSessionFetcher.framework */,
+				E16A9F8523F4753200765151 /* FirebaseAuth.framework */,
+			);
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		E16A9F8723F4753200765151 /* FirebaseFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				E16A9F8823F4753200765151 /* gRPC-Core.framework */,
+				E16A9F8923F4753200765151 /* FirebaseFirestore.framework */,
+				E16A9F8A23F4753200765151 /* Resources */,
+				E16A9F8C23F4753200765151 /* BoringSSL-GRPC.framework */,
+				E16A9F8D23F4753200765151 /* leveldb-library.framework */,
+				E16A9F8E23F4753200765151 /* abseil.framework */,
+				E16A9F8F23F4753200765151 /* gRPC-C++.framework */,
+			);
+			path = FirebaseFirestore;
+			sourceTree = "<group>";
+		};
+		E16A9F8A23F4753200765151 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E16A9F8B23F4753200765151 /* gRPCCertificates-Cpp.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E16A9F9023F4753200765151 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				E16A9F9123F4753200765151 /* GoogleDataTransport.framework */,
+				E16A9F9223F4753200765151 /* GoogleDataTransportCCTSupport.framework */,
+				E16A9F9323F4753200765151 /* GoogleAppMeasurement.framework */,
+				E16A9F9423F4753200765151 /* FirebaseCore.framework */,
+				E16A9F9523F4753200765151 /* FirebaseAnalytics.framework */,
+				E16A9F9623F4753200765151 /* GoogleUtilities.framework */,
+				E16A9F9723F4753200765151 /* PromisesObjC.framework */,
+				E16A9F9823F4753200765151 /* nanopb.framework */,
+				E16A9F9923F4753200765151 /* FirebaseInstallations.framework */,
+				E16A9F9A23F4753200765151 /* FIRAnalyticsConnector.framework */,
+				E16A9F9B23F4753200765151 /* FirebaseInstanceID.framework */,
+				E16A9F9C23F4753200765151 /* FirebaseCoreDiagnostics.framework */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		E16A9F9D23F4753200765151 /* FirebaseStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E16A9F9E23F4753200765151 /* GTMSessionFetcher.framework */,
+				E16A9F9F23F4753200765151 /* FirebaseStorage.framework */,
+			);
+			path = FirebaseStorage;
 			sourceTree = "<group>";
 		};
 		E1A2ED4123D45622007CF073 /* Services */ = {
@@ -225,6 +372,7 @@
 		E1B9632723CA13CF00BF73EA /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				E16A9F8223F4753200765151 /* Frameworks */,
 				E1B9633D23CA142A00BF73EA /* App */,
 				E156DF1423D03B430081207A /* Model */,
 				E1A2ED4123D45622007CF073 /* Services */,
@@ -260,8 +408,34 @@
 				E1B9633123CA13D900BF73EA /* Assets.xcassets */,
 				E1B9633323CA13D900BF73EA /* LaunchScreen.storyboard */,
 				E1B9633623CA13D900BF73EA /* Info.plist */,
+				E16A9FB823F475AB00765151 /* Tinder-Bridging-Header.h */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1C2C01A23F3E13E00D56423 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E137B4D423D6F4530074C28B /* SettingViewController.swift */,
+				E137B4D823D70C220074C28B /* CustomImagePickerController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E1C2C01B23F3E14C00D56423 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E1C2C01823F3E12100D56423 /* SettingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E1C2C01C23F43B2700D56423 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E137B4DA23D715350074C28B /* SettingHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E1C9D6A223D0491E006489FA /* ViewModel */ = {
@@ -275,9 +449,9 @@
 		E1ED4E9123D18114001DB943 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				E13A58B523D2D674008CE5DF /* ViewModel */,
 				E13A58B423D2D670008CE5DF /* View */,
 				E13A58B323D2D667008CE5DF /* ViewController */,
+				E13A58B523D2D674008CE5DF /* ViewModel */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -289,17 +463,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1B9633923CA13D900BF73EA /* Build configuration list for PBXNativeTarget "Tinder" */;
 			buildPhases = (
-				7A075283313873CAFD7A3B83 /* [CP] Check Pods Manifest.lock */,
 				E1B9632123CA13CF00BF73EA /* Sources */,
 				E1B9632223CA13CF00BF73EA /* Frameworks */,
 				E1B9632323CA13CF00BF73EA /* Resources */,
-				DC361AC246CE0C228125061A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Tinder;
+			packageProductDependencies = (
+				E194B4FF23F48DF70097B4D5 /* PromiseKit */,
+				E194B50223F48E7C0097B4D5 /* Kingfisher */,
+				E194B50523F490F40097B4D5 /* JGProgressHUD */,
+			);
 			productName = Tinder;
 			productReference = E1B9632523CA13CF00BF73EA /* Tinder.app */;
 			productType = "com.apple.product-type.application";
@@ -316,6 +493,7 @@
 				TargetAttributes = {
 					E1B9632423CA13CF00BF73EA = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -328,6 +506,11 @@
 				Base,
 			);
 			mainGroup = E1B9631C23CA13CF00BF73EA;
+			packageReferences = (
+				E194B4FE23F48DF70097B4D5 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				E194B50123F48E7C0097B4D5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E194B50423F490F40097B4D5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+			);
 			productRefGroup = E1B9632623CA13CF00BF73EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,54 +526,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B9633523CA13D900BF73EA /* LaunchScreen.storyboard in Resources */,
+				E16A9FA523F4753300765151 /* gRPCCertificates-Cpp.bundle in Resources */,
 				E1B9633223CA13D900BF73EA /* Assets.xcassets in Resources */,
 				E13A58B223D2C56A008CE5DF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7A075283313873CAFD7A3B83 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Tinder-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC361AC246CE0C228125061A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tinder/Pods-Tinder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tinder/Pods-Tinder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tinder/Pods-Tinder-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1B9632123CA13CF00BF73EA /* Sources */ = {
@@ -402,9 +544,10 @@
 				E114812F23CEB04D00457392 /* CardView.swift in Sources */,
 				E114812423CDBE9100457392 /* HomeViewController.swift in Sources */,
 				E1ED4E9523D18BD9001DB943 /* FormTextField.swift in Sources */,
+				E1C2C01923F3E12100D56423 /* SettingViewModel.swift in Sources */,
 				E137B4D523D6F4530074C28B /* SettingViewController.swift in Sources */,
 				E114812723CDC70300457392 /* UIView+Layout.swift in Sources */,
-				E137B4DB23D715350074C28B /* HeaderView.swift in Sources */,
+				E137B4DB23D715350074C28B /* SettingHeaderView.swift in Sources */,
 				E13A58AD23D2AC3A008CE5DF /* Optional+Extensions.swift in Sources */,
 				E1A2ED4323D4563B007CF073 /* FirebaseUserService.swift in Sources */,
 				E137B4D723D6FD1D0074C28B /* UIButton+Extensions.swift in Sources */,
@@ -554,37 +697,86 @@
 		};
 		E1B9633A23CA13D900BF73EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CDACD9F02B191A181C109CD /* Pods-Tinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tinder/Frameworks/FirebaseAuth",
+					"$(PROJECT_DIR)/Tinder/Frameworks/FirebaseFirestore",
+					"$(PROJECT_DIR)/Tinder/Frameworks/FirebaseAnalytics",
+					"$(PROJECT_DIR)/Tinder/Frameworks/FirebaseStorage",
+				);
 				INFOPLIST_FILE = Tinder/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumblr.whoistuanhai.Tinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tinder/Resources/Tinder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Tinder/Frameworks";
 			};
 			name = Debug;
 		};
 		E1B9633B23CA13D900BF73EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7FC3F54895DC7F8AA266E26 /* Pods-Tinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tinder/Frameworks/FirebaseAuth",
+					"$(PROJECT_DIR)/Tinder/Frameworks/FirebaseFirestore",
+					"$(PROJECT_DIR)/Tinder/Frameworks/FirebaseAnalytics",
+					"$(PROJECT_DIR)/Tinder/Frameworks/FirebaseStorage",
+				);
 				INFOPLIST_FILE = Tinder/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumblr.whoistuanhai.Tinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tinder/Resources/Tinder-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Tinder/Frameworks";
 			};
 			name = Release;
 		};
@@ -610,6 +802,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E194B4FE23F48DF70097B4D5 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.13.1;
+			};
+		};
+		E194B50123F48E7C0097B4D5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.0;
+			};
+		};
+		E194B50423F490F40097B4D5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E194B4FF23F48DF70097B4D5 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E194B4FE23F48DF70097B4D5 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+		E194B50223F48E7C0097B4D5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E194B50123F48E7C0097B4D5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		E194B50523F490F40097B4D5 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E194B50423F490F40097B4D5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E1B9631D23CA13CF00BF73EA /* Project object */;
 }
