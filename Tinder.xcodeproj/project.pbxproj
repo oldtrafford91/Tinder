@@ -716,16 +716,6 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"UIKit\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumblr.whoistuanhai.Tinder;
@@ -759,16 +749,6 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"UIKit\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumblr.whoistuanhai.Tinder;
