@@ -3,14 +3,13 @@ import Firebase
 import JGProgressHUD
 
 class HomeViewController: UIViewController {
-  
   // MARK: - Subviews
   let topStackView = TopNavigationStackView()
   let deckView = UIView()
   let bottomStackView = HomeBottomControlsStackView()
   let loadingHUD = JGProgressHUD()
   
-  // MARK: Properties
+  // MARK: - Properties
   let viewModel = HomeViewModel()
   
   // MARK: - View Life Cycle
@@ -20,7 +19,7 @@ class HomeViewController: UIViewController {
     fetchUsers()
   }
   
-  // MARK: Setup
+  // MARK: - Setup
   private func setupViewHierachy() {
     view.backgroundColor = .systemBackground
     setupContainerStackView()
@@ -77,8 +76,7 @@ class HomeViewController: UIViewController {
     }
   }
   
-  // MARK: Action
-  
+  // MARK: - Action
   @objc private func handleSettingButton(sender button: UIButton ) {
     let settingVC = SettingViewController()
     let settingNVC = UINavigationController(rootViewController: settingVC)

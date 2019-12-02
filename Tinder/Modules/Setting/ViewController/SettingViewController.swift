@@ -1,11 +1,11 @@
 import UIKit
 
 class SettingViewController: UITableViewController {
-  
   // MARK: - Subviews
-  let tableHeader = HeaderView()
+  let tableHeader = SettingHeaderView()
   
   // MARK: - Properties
+  let viewModel = SettingViewModel()
   
   // MARK: - View Life Cycle
   override func viewDidLoad() {
@@ -44,7 +44,6 @@ class SettingViewController: UITableViewController {
   }
   
   // MARK: - Action
-  
   @objc private func handleCancelBarButton() {
     dismiss(animated: true)
   }
@@ -75,12 +74,11 @@ extension SettingViewController {
   }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 5
+    return viewModel.numberOfSections()
   }
   
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    
-    return "section \(section)"
+    return viewModel.titleForHeaderInSection(section)
   }
 }
 
@@ -93,8 +91,14 @@ extension SettingViewController: UIImagePickerControllerDelegate, UINavigationCo
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     
     let selectedImage = info[.originalImage] as? UIImage
-    guard let picker = picker as? CustomImagePickerController else { return }
-    (picker.sender as! UIButton).setImage(selectedImage?.withRenderingMode(.alwaysOriginal), for: .normal)
+    guard let picker = picker as? CustomImagePickerController,
+          let button = picker.sender as? UIButton else {
+            return
+    }
+    button.setImage(selectedImage?.withRenderingMode(.alwaysOriginal), for: .normal)
     dismiss(animated: true)
   }
+  
+
+  
 }

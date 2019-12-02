@@ -1,3 +1,1 @@
-protocol CardItem {
-  
-}
+protocol CardItem {}

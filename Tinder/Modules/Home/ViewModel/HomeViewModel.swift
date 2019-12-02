@@ -7,7 +7,7 @@ class HomeViewModel {
   // MARK: - Properties
   private var users: [User] = [] {
     didSet {
-      cardViewModels = makeCardViewModels(from: users)
+      cardViewModels = CardViewViewModel.makeCardViewModels(from: users)
     }
   }
   var cardViewModels: [CardViewViewModel] = []
@@ -18,7 +18,6 @@ class HomeViewModel {
   var onFetchUserFailed: Observer<Error> = { _ in}
   
   // MARK: - Action
-  
   func fetchUsers() {
     onFetchingUser(true)
     firstly {
@@ -33,10 +32,4 @@ class HomeViewModel {
       self.onFetchUserFailed(error)
     }
   }
-  
-  // MARK: - Helpers
-  private func makeCardViewModels(from users: [User]) -> [CardViewViewModel] {
-    return users.map { CardViewViewModel(model: $0) }
-  }
-  
 }

@@ -1,17 +1,18 @@
 import UIKit
 import Kingfisher
+
 class CardViewViewModel {
   typealias Observer<T> = (T) -> ()
   
   // MARK: Properties
-  private let model: CardItem
+  private let item: CardItem
   
   var imageURLs: [URL] {
-    if let user = model as? User {
+    if let user = item as? User {
       return user.userImages.compactMap {
         URL(string: $0)
       }
-    } else if let advertiser = model as? Adveriser {
+    } else if let advertiser = item as? Adveriser {
       return advertiser.brandImages.compactMap {
         URL(string: $0)
       }
@@ -21,14 +22,14 @@ class CardViewViewModel {
   
   var information: NSAttributedString {
     let information = NSMutableAttributedString()
-    if let user = model as? User {
+    if let user = item as? User {
       information.append(NSAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 34, weight: .heavy)]))
       
       let ageString = (user.age != nil) ? "\(user.age!)" : "N\\A"
       
       information.append(NSAttributedString(string: "  \(ageString)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular) ]))
       information.append(NSAttributedString(string: "\n \(user.profession ?? "Not available")", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular) ]))
-    } else if let advertiser = model as? Adveriser{
+    } else if let advertiser = item as? Adveriser{
       information.append(NSAttributedString(string: advertiser.title, attributes: [.font: UIFont.systemFont(ofSize: 34, weight: .heavy)]))
       information.append(NSAttributedString(string: "\n \(advertiser.brandName)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .bold)]))
     }
@@ -36,7 +37,7 @@ class CardViewViewModel {
   }
   
   var textAlignment: NSTextAlignment {
-    if model is User {
+    if item is User {
       return .left
     } else {
       return .center
@@ -54,7 +55,7 @@ class CardViewViewModel {
   
   // MARK: - Initializer
   init(model: CardItem) {
-    self.model = model
+    self.item = model
   }
   
   // MARK: - Action
@@ -67,4 +68,11 @@ class CardViewViewModel {
     currentImageIndex = max(0, currentImageIndex - 1)
   }
 
+}
+
+// MARK: Factory
+extension CardViewViewModel {
+  static func makeCardViewModels(from users: [User]) -> [CardViewViewModel] {
+    return users.map { CardViewViewModel(model: $0) }
+  }
 }

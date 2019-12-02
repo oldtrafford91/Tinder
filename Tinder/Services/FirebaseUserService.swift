@@ -57,6 +57,14 @@ class FirebaseUserService {
       }
     }
   }
+  
+  static func fetchUserInfo() -> Promise<User> {
+    return Promise { seal in
+      
+      
+      
+    }
+  }
 }
 
 

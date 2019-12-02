@@ -1,6 +1,6 @@
 import UIKit
 
-class HeaderView: UIView {
+class SettingHeaderView: UIView {
   
   // MARK: - Subviews
   let leftSelectPhotoButton = UIButton.makeSelectPhotoButton()
